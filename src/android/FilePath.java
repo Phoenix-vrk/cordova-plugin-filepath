@@ -105,8 +105,8 @@ public class FilePath extends CordovaPlugin {
             // Seems like once you target API level 30, you can't access files you should have
             // access to. So then always run this getDriveFilePath which will use
             // getContentResolver().openInputStream(uri) to read it
-          if ("file".equalsIgnoreCase(uri.getScheme())) {
-            filePath = uri.getPath();
+          if ("file".equalsIgnoreCase(pvUrl.getScheme())) {
+            filePath = pvUrl.getPath();
           }
              else{
             filePath = getDriveFilePath(pvUrl, appContext);
