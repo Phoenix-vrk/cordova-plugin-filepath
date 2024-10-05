@@ -106,7 +106,7 @@ public class FilePath extends CordovaPlugin {
             // access to. So then always run this getDriveFilePath which will use
             // getContentResolver().openInputStream(uri) to read it
           if ("file".equalsIgnoreCase(pvUrl.getScheme())) {
-            filePath = pvUrl.getPath();
+            filePath=getPath(appContext, pvUrl);
           }
              else{
             filePath = getDriveFilePath(pvUrl, appContext);
